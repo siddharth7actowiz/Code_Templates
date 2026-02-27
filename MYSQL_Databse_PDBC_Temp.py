@@ -45,6 +45,7 @@ def batch_insert(cursor, insert_query: str, values: List[Tuple], batch_size: int
 
         try:
             cursor.executemany(insert_query, batch)
+            con.commit()
             batch_count += 1
             print(f"Inserted batch {batch_count} ({start} → {end})")
 
@@ -171,8 +172,7 @@ def run_ingestion(json_file_path):
             cursor, insert_menu_query, menu_values
         )
 
-        con.commit()
-
+        
         print("Transaction Successful")
         print(f"Restaurant batches: {rest_batches}")
         print(f"Menu batches: {menu_batches}")
