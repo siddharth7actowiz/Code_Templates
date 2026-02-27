@@ -25,7 +25,7 @@ BATCH_SIZE = 200
 
 def get_connection():
     con = mysql.connector.connect(**DB_CONFIG)
-    con.autocommit = False  # Important for transaction safety
+    con.autocommit = False
     return con
 
 
@@ -34,22 +34,26 @@ def get_connection():
 # ==========================================
 
 def batch_insert(cursor, insert_query: str, values: List[Tuple], batch_size: int = BATCH_SIZE):
-    """
-    Generic batch insert function
-    """
+
     total_records = len(values)
     batch_count = 0
+    failed_batches = []
 
     for start in range(0, total_records, batch_size):
         end = min(start + batch_size, total_records)
         batch = values[start:end]
 
-        cursor.executemany(insert_query, batch)
-        batch_count += 1
+        try:
+            cursor.executemany(insert_query, batch)
+            batch_count += 1
+            print(f"Inserted batch {batch_count} ({start} → {end})")
 
-        print(f"Inserted batch {batch_count} ({start} → {end})")
+        except Exception as e:
+            print(f"Batch failed ({start} → {end})")
+            print("Error:", e)
+            failed_batches.append(batch)
 
-    return batch_count
+    return batch_count, failed_batches
 
 
 # ==========================================
@@ -65,7 +69,6 @@ def transform_json_to_db_values(json_data):
         rest = data.get("Restaurant_Details", {})
         menu_items = data.get("Menu_Items", [])
 
-        # Restaurant table tuple
         restaurant_values.append((
             rest.get("Restaurant_ID"),
             rest.get("Restaurant_Name"),
@@ -83,7 +86,6 @@ def transform_json_to_db_values(json_data):
             rest.get("Timing_Everyday")
         ))
 
-        # Menu table tuples
         for item in menu_items:
             menu_values.append((
                 item.get("Restaurant_ID"),
@@ -160,20 +162,27 @@ def run_ingestion(json_file_path):
 
     try:
         print("Starting Restaurant Batch Insert...")
-        rest_batches = batch_insert(cursor, insert_rest_query, restaurant_values)
+        rest_batches, rest_failed = batch_insert(
+            cursor, insert_rest_query, restaurant_values
+        )
 
         print("Starting Menu Batch Insert...")
-        menu_batches = batch_insert(cursor, insert_menu_query, menu_values)
+        menu_batches, menu_failed = batch_insert(
+            cursor, insert_menu_query, menu_values
+        )
 
         con.commit()
 
-        print("Transaction Successful :white_check_mark:")
+        print("Transaction Successful")
         print(f"Restaurant batches: {rest_batches}")
         print(f"Menu batches: {menu_batches}")
 
+        print("Failed Restaurant Rows:", sum(len(b) for b in rest_failed))
+        print("Failed Menu Rows:", sum(len(b) for b in menu_failed))
+
     except Exception as e:
         con.rollback()
-        print("Transaction Failed :x:")
+        print("Transaction Failed")
         print("Error:", e)
 
     finally:
