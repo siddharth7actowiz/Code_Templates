@@ -40,7 +40,7 @@ def batch_insert(cursor, insert_query: str, values: List[Tuple], batch_size: int
     failed_batches = []
 
     for start in range(0, total_records, batch_size):
-        end = min(start + batch_size, total_records)
+        end = min(start + batch_size, total_records) # to avoid array out of bound index error
         batch = values[start:end]
 
         try:
