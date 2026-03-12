@@ -18,6 +18,10 @@ def load_json(input_src_folder):
 
     return json_data
 
+
+
+
+
 import os
 import gzip
 import json
@@ -39,4 +43,4 @@ def load_files(data_dir,start_val,end_val):
 
         except Exception as e:
 
-            print("Failed file:", file, e)
+            print("Failed file:", file,load_files.__name__ ,e)
