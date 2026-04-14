@@ -1,0 +1,376 @@
+{
+  "info": {
+    "_postman_id": "52e67134-6f1e-437a-8873-c540c98c1b13",
+    "name": "DMART",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "38628757"
+  },
+  "item": [
+    {
+      "name": "set_pincode_request",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "accept",
+            "value": "*/*"
+          },
+          {
+            "key": "accept-language",
+            "value": "en-US,en;q=0.6"
+          },
+          {
+            "key": "cache-control",
+            "value": "no-cache"
+          },
+          {
+            "key": "content-type",
+            "value": "application/json;charset=UTF-8"
+          },
+          {
+            "key": "d_info",
+            "value": "w-20260409_122327"
+          },
+          {
+            "key": "origin",
+            "value": "https://www.dmart.in"
+          },
+          {
+            "key": "pragma",
+            "value": "no-cache"
+          },
+          {
+            "key": "priority",
+            "value": "u=1, i"
+          },
+          {
+            "key": "referrer-policy",
+            "value": "no-referrer"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Brave\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"Windows\""
+          },
+          {
+            "key": "sec-fetch-dest",
+            "value": "empty"
+          },
+          {
+            "key": "sec-fetch-mode",
+            "value": "cors"
+          },
+          {
+            "key": "sec-fetch-site",
+            "value": "same-site"
+          },
+          {
+            "key": "sec-gpc",
+            "value": "1"
+          },
+          {
+            "key": "storeid",
+            "value": "10681"
+          },
+          {
+            "key": "user-agent",
+            "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "x-content-type-options",
+            "value": "nosniff"
+          },
+          {
+            "key": "x-download-options",
+            "value": "noopen"
+          },
+          {
+            "key": "x-frame-options",
+            "value": "DENY"
+          },
+          {
+            "key": "x-request-id",
+            "value": "OThmYjUzODQtYzMzMC00MjI0LWFhMGEtYzkxMDJkNzdlMTRhfHxTLTIwMjYwNDA5XzEyMjMyN3x8LTEwMDI="
+          },
+          {
+            "key": "x-xss-protection",
+            "value": "0"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"uniqueId\":\"ChIJpYpcSkmEXjkRw6-n_QGj0Bk\",\"apiMode\":\"GA\",\"pincode\":\"380001\",\"area\":\"Dariapur\",\"currentLat\":\"23.0264259\",\"currentLng\":\"72.5843414\",\"isUsersCurrentLocation\":\"true\",\"skip\":\"true\",\"flowType\":\"0\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://digital.dmart.in/api/v2/pincodes/details",
+          "protocol": "https",
+          "host": [
+            "digital",
+            "dmart",
+            "in"
+          ],
+          "path": [
+            "api",
+            "v2",
+            "pincodes",
+            "details"
+          ]
+        },
+        "description": "1. Request on https://digital.dmart.in/\n    \n2. Enter Pincode in seletor on website\n    \n3. Open N/W Tab you will se a request named details that will contain post method for pincode"
+      },
+      "response": []
+    },
+    {
+      "name": "search_input_request",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "accept",
+            "value": "*/*"
+          },
+          {
+            "key": "accept-language",
+            "value": "en-US,en;q=0.6"
+          },
+          {
+            "key": "cache-control",
+            "value": "no-cache"
+          },
+          {
+            "key": "content-type",
+            "value": "application/json;charset=UTF-8"
+          },
+          {
+            "key": "d_info",
+            "value": "w-20260409_122327"
+          },
+          {
+            "key": "origin",
+            "value": "https://www.dmart.in"
+          },
+          {
+            "key": "pragma",
+            "value": "no-cache"
+          },
+          {
+            "key": "priority",
+            "value": "u=1, i"
+          },
+          {
+            "key": "referrer-policy",
+            "value": "no-referrer"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Brave\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"Windows\""
+          },
+          {
+            "key": "sec-fetch-dest",
+            "value": "empty"
+          },
+          {
+            "key": "sec-fetch-mode",
+            "value": "cors"
+          },
+          {
+            "key": "sec-fetch-site",
+            "value": "same-site"
+          },
+          {
+            "key": "sec-gpc",
+            "value": "1"
+          },
+          {
+            "key": "storeid",
+            "value": "10681"
+          },
+          {
+            "key": "user-agent",
+            "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "x-content-type-options",
+            "value": "nosniff"
+          },
+          {
+            "key": "x-download-options",
+            "value": "noopen"
+          },
+          {
+            "key": "x-frame-options",
+            "value": "DENY"
+          },
+          {
+            "key": "x-request-id",
+            "value": "OThmYjUzODQtYzMzMC00MjI0LWFhMGEtYzkxMDJkNzdlMTRhfHxTLTIwMjYwNDA5XzEyMjMyN3x8LTEwMDI="
+          },
+          {
+            "key": "x-xss-protection",
+            "value": "0"
+          }
+        ],
+        "url": {
+          "raw": "https://digital.dmart.in/api/v3/search/milk?page=1&buryOOS=true&size=100&channel=web&storeId=10681",
+          "protocol": "https",
+          "host": [
+            "digital",
+            "dmart",
+            "in"
+          ],
+          "path": [
+            "api",
+            "v3",
+            "search",
+            "milk"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "buryOOS",
+              "value": "true"
+            },
+            {
+              "key": "size",
+              "value": "100"
+            },
+            {
+              "key": "channel",
+              "value": "web"
+            },
+            {
+              "key": "storeId",
+              "value": "10681"
+            }
+          ]
+        },
+        "description": "1. Search any product as input for eg :-milk\n    \n2. Open network tab you will find milk?page api\n    \n3. In response of that api you will have productname ,url and skuUniqueID,articleNumber store them for product api purpose"
+      },
+      "response": []
+    },
+    {
+      "name": "fetch_product_data",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "accept",
+            "value": "*/*"
+          },
+          {
+            "key": "accept-language",
+            "value": "en-US,en;q=0.6"
+          },
+          {
+            "key": "cache-control",
+            "value": "no-cache"
+          },
+          {
+            "key": "next-router-state-tree",
+            "value": "%5B%22%22%2C%7B%22children%22%3A%5B%22search%22%2C%7B%22children%22%3A%5B%22__PAGE__%22%2C%7B%7D%2Cnull%2Cnull%5D%7D%2Cnull%2Cnull%5D%7D%2Cnull%2Cnull%2Ctrue%5D"
+          },
+          {
+            "key": "next-url",
+            "value": "/search"
+          },
+          {
+            "key": "pragma",
+            "value": "no-cache"
+          },
+          {
+            "key": "priority",
+            "value": "u=1, i"
+          },
+          {
+            "key": "rsc",
+            "value": "1"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Brave\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"Windows\""
+          },
+          {
+            "key": "sec-fetch-dest",
+            "value": "empty"
+          },
+          {
+            "key": "sec-fetch-mode",
+            "value": "cors"
+          },
+          {
+            "key": "sec-fetch-site",
+            "value": "same-origin"
+          },
+          {
+            "key": "sec-gpc",
+            "value": "1"
+          },
+          {
+            "key": "user-agent",
+            "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "Cookie",
+            "value": "uuid=; d_info=\"w-20260409_122327\"; reqId=\"OThmYjUzODQtYzMzMC00MjI0LWFhMGEtYzkxMDJkNzdlMTRhfHxTLTIwMjYwNDA5XzEyMjMyN3x8LTEwMDI=\"; showHomePageSearchTooltip=false; guest={\"preferredPIN\":\"380001\",\"preferredStore\":\"10681\",\"preferredCity\":\"Ahmedabad\",\"preferredArea\":\"Bhadra\",\"isLoggedIn\":false,\"isPinSet\":\"true\",\"lat\":\"23.0264259\",\"long\":\"72.5843414\",\"formattedAddress\":\"380001, Ahmedabad, Gujarat, India\",\"areaLocationId\":\"\"}; recentUserPincodeSearch2=[{\"uniqueId\":\"ChIJpYpcSkmEXjkRw6-n_QGj0Bk\",\"pincode\":\"380001\",\"apiMode\":\"GA\",\"primaryText\":\"380001\",\"secondaryText\":\"Ahmedabad, Gujarat, India\",\"formattedAddress\":\"380001, Ahmedabad, Gujarat, India\",\"area\":\"Bhadra\",\"showView\":\"false\",\"lat\":\"23.0264259\",\"long\":\"72.5843414\",\"newFormattedString\":\"380001, Ahmedabad, Gujarat, India\",\"areaLocationId\":\"\",\"storeId\":\"10681\"},{\"apiMode\":\"GA\",\"area\":\"Shivajinagar\",\"flowType\":\"0\",\"lat\":\"18.530263\",\"long\":\"73.84985879999999\",\"pincode\":\"411005\",\"primaryText\":\"Shivaji Nagar\",\"secondaryText\":\"Pune, Maharashtra, India\",\"skip\":\"false\",\"storeId\":\"10729\",\"uniqueId\":\"\",\"newFormattedString\":\"Shivaji Nagar, Pune, Maharashtra, India\",\"formattedAddress\":\"Shivaji Nagar, Pune, Maharashtra, India\",\"areaLocationId\":\"\"},{\"uniqueId\":\"ChIJLw18jY3BwjsREZKiLV4WgMg\",\"pincode\":\"411001\",\"apiMode\":\"GA\",\"primaryText\":\"Pune Junction Railway Station\",\"secondaryText\":\"Agarkar Nagar, Pune, Maharashtra, India\",\"formattedAddress\":\"Pune Junction Railway Station, Agarkar Nagar, Pune, Maharashtra, India\",\"area\":\"Agarkar Nagar\",\"showView\":\"false\",\"lat\":\"18.5291453\",\"long\":\"73.8741484\",\"newFormattedString\":\"Pune Junction Railway Station, Agarkar Nagar, Pune, Maharashtra, India\",\"areaLocationId\":\"\",\"storeId\":\"10738\"}]; searchHistory=[{\"storedKeyword\":\"milk\",\"searchCount\":1}]"
+          }
+        ],
+        "url": {
+          "raw": "https://www.dmart.in/product/milky-mist-uht-sterilized-toned-milk-ptonedmilk0milk15xx260723?selectedProd=1355508&_rsc=1gn38",
+          "protocol": "https",
+          "host": [
+            "www",
+            "dmart",
+            "in"
+          ],
+          "path": [
+            "product",
+            "milky-mist-uht-sterilized-toned-milk-ptonedmilk0milk15xx260723"
+          ],
+          "query": [
+            {
+              "key": "selectedProd",
+              "value": "1355508"
+            },
+            {
+              "key": "_rsc",
+              "value": "1gn38"
+            }
+          ]
+        },
+        "description": "1.Request any of url you made from previous response for eg:-[https://www.dmart.in/product/milky-mist-uht-sterilized-toned-milk-ptonedmilk0milk15xx260723?selectedProd=1355508](https://www.dmart.in/product/milky-mist-uht-sterilized-toned-milk-ptonedmilk0milk15xx260723?selectedProd=1355508)\n\n2.in html content of this page you will find all data relate to this product"
+      },
+      "response": []
+    }
+  ]
+}
